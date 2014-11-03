@@ -2,16 +2,16 @@
 
 ## Slides
 
-[here](http://jgravois.github.io/gdi-esri/index.html)
+[here](http://jgravois.github.io/gdi-esri/pres/index.html)
 
 ## Workshop
 
-ideas:
-find data in socrata
-use koop to make it look like a feature service
-do drivetime analysis
-use koop to turn into geojson
-stick output in leaflet app with esri basemap
+idea:
+*find data in socrata
+*use koop to make it look like a feature service
+*do drivetime analysis in AGOL
+*use koop to turn into geojson
+*stick output in leaflet app with esri basemap
 
 ## License
 

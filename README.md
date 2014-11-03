@@ -6,12 +6,12 @@
 
 ## Workshop
 
-idea:
-*find data in socrata
-*use koop to make it look like a feature service
-*do drivetime analysis in AGOL
-*use koop to turn into geojson
-*stick output in leaflet app with esri basemap
+idea:<br>
+search socrata for something interesting<br>
+use koop to make it look like a feature service<br>
+do drivetime analysis in AGOL<br>
+use koop to turn into geojson<br>
+stick output in leaflet app with esri basemap<br>
 
 ## License
 

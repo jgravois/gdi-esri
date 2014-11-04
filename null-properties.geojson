@@ -15,7 +15,7 @@
     },
     {
       "type": "Feature",
-      "id": "10",
+      "id": "2",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -27,7 +27,7 @@
     },
     {
       "type": "Feature",
-      "id": "100",
+      "id": "3",
       "geometry": {
         "type": "Point",
         "coordinates": [

@@ -11,8 +11,7 @@
           38.91551648717705
         ]
       },
-      "properties": {
-      }
+      "properties": {}
     },
     {
       "type": "Feature",
@@ -24,8 +23,7 @@
           38.95294098491906
         ]
       },
-      "properties": {
-      }
+      "properties": {}
     },
     {
       "type": "Feature",
@@ -37,9 +35,8 @@
           38.87009150762566
         ]
       },
-      "properties": {
-      }
-    },
+      "properties": {}
+    }
   ],
   "name": "Education - DC",
   "updated_at": 1405036640000

@@ -1,0 +1,46 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "1",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.06861620212666,
+          38.91551648717705
+        ]
+      },
+      "properties": {
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "10",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.07008151775702,
+          38.95294098491906
+        ]
+      },
+      "properties": {
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "100",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.98307953050461,
+          38.87009150762566
+        ]
+      },
+      "properties": {
+      }
+    },
+  ],
+  "name": "Education - DC",
+  "updated_at": 1405036640000
+}

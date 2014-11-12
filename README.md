@@ -12,9 +12,10 @@
 
 alternative idea (no coding required):<br>
 1. search github or a socrata portal for something interesting<br>
-(like [this](https://github.com/jgravois/gdi-esri/blob/master/dc-schools.geojson))<br>
-2. use koop to visualize it in ArcGIS Online>br>
-3. publish a javascript app using a template
+(like [this](https://github.com/jgravois/gdi-esri/blob/master/dc-schools.geojson) or [this](https://github.com/lyzidiamond/catnews/blob/master/catnews.geojson))<br> 
+2. use koop to visualize it in ArcGIS Online<br>
+3. publish a javascript app using a template, make a story map 
+
 
 ## Disclaimer
 using koop services for analysis in ArcGIS Online is still an experiment in progress.  if attempting, be prepared for the unexpected.

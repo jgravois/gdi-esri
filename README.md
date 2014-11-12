@@ -13,7 +13,7 @@
 alternative idea (no coding required):<br>
 1. search github or a socrata portal for something interesting<br>
 (like [this](https://github.com/jgravois/gdi-esri/blob/master/dc-schools.geojson) or [this](https://github.com/lyzidiamond/catnews/blob/master/catnews.geojson))<br> 
-2. use koop to visualize it in ArcGIS Online<br>
+2. use koop to turn it into [geojson](http://koop.dc.esri.com/github/lyzidiamond/catnews/catnews) and an Esri [Feature Service](http://koop.dc.esri.com/github/lyzidiamond/catnews/catnews/featureserver/0) to visualize it in ArcGIS Online<br>
 3. publish a javascript app using a template, make a story map 
 
 

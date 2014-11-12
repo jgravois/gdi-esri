@@ -3,10 +3,19 @@
 ## [Slides](http://jgravois.github.io/gdi-esri/pres/index.html)
 
 ## Workshop
-search socrata for something interesting (like [this](https://data.cityofnewyork.us/Public-Safety/NYC-Tornado-September-16-2010/4bvt-f84g)<br>
-use [koop](http://koop.dc.esri.com/socrata/newyork/4bvt-f84g) to turn it into geojson<br>
-find something else interesting in [AGOL](http://esrihack.maps.arcgis.com/home/webmap/viewer.html?webmap=cbe36ebf4c2445998e18a3b96a66e735) and do an analysis on it. <<< any ideas @cclaessens?<br>
-publish a mashup [esri leaflet app](http://mjuniper.github.io/koop-leaflet/)<br>
+create a [free](https://developers.arcgis.com/en/sign-up/) ArcGIS developer account
+search github or a socrata portal for something interesting (like [this](https://github.com/jgravois/gdi-esri/blob/master/dc-schools.geojson)<br>
+use [koop](http://whispering-temple-3513.herokuapp.com) to turn it into [geojson](http://whispering-temple-3513.herokuapp.com/github/jgravois/gdi-esri/dc-schools/) and an Esri [Feature Service](http://whispering-temple-3513.herokuapp.com/github/jgravois/gdi-esri/dc-schools/arcgis/rest/services/FeatureServer/0)<br>
+try doing a drive time analysis in [ArcGIS Online](http://esrihack.maps.arcgis.com/home/webmap/viewer.html?webmap=0d3e85d946824ac783692a54b317e4a3) by following the instructions [here](http://doc.arcgis.com/en/arcgis-online/use-maps/use-analysis-tools.htm)<br>
+publish a mashup [esri leaflet app](http://jgravois.github.io/gdi-esri/demo.html)<br>
+
+alternative idea (no coding required):
+search github or a socrata portal for something interesting (like [this](https://github.com/jgravois/gdi-esri/blob/master/dc-schools.geojson))
+use koop to visualize it in ArcGIS Online
+publish a javascript app using a template
+
+## Disclaimer
+using koop services for analysis is still an experiment in progress.  if attempting, be prepared for the unexpected.
 
 ## License
 

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <!-- Load Leaflet from CDN-->
+    <link rel="stylesheet" href="//cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <script src="//cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+    <!-- Load leaflet-ajax -->
+    <script src="//dl.dropboxusercontent.com/u/59331579/0.7.3/leaflet.ajax-1.1.0.js"></script>
+
+    <!-- Load Esri Leaflet from CDN -->
+    <script src="//cdn-geoweb.s3.amazonaws.com/esri-leaflet/1.0.0-rc.4/esri-leaflet.js"></script>
+
+    <style>
+      body {margin:0;padding:0;}
+      #map {position: absolute;top:0;bottom:0;right:0;left:0;}
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      //create map and add esri basemap
+      var map = L.map('map').setView([38.896, -77.0375], 13);
+      L.esri.basemapLayer("Gray").addTo(map);
+
+      /*load geojson schools directly from github
+      https://github.com/calvinmetcalf/leaflet-ajax*/
+      var schools = new L.GeoJSON.AJAX("dc-schools.geojson", {
+        onEachFeature: bindPopups
+      });
+      schools.addTo(map);
+
+      /*load the output of your analysis from ArcGIS Online
+      http://esri.github.io/esri-leaflet/examples/simple-feature-layer.html*/
+      var driveTimes = new L.esri.FeatureLayer("http://services1.arcgis.com/ohIVh2op2jYT7sku/arcgis/rest/services/school-drivetimes/FeatureServer/0", {
+       style: function () {
+          return { color: "#70ca49", fillOpacity: 0.1, stroke: false};
+        }
+        //how might we draw bigger drivetimes in a different color?
+      }).addTo(map);
+
+      /*loop through the features as they're added to hydrate content for a popup
+      http://leafletjs.com/examples/geojson.html*/
+      function bindPopups(feature, layer){
+        var popupContent =
+          feature.properties.NAME +
+          '<br>' +
+          feature.properties.PHONE;
+        layer.bindPopup(popupContent);
+      }
+    </script>
+  </body>
+</html>

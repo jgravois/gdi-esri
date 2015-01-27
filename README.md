@@ -9,7 +9,12 @@
 ## Resources
 * check out this awesome [gist](https://gist.github.com/sidewalkballet/60edc3408cbbcb6fb949) from [@sidewalkballet](https://github.com/sidewalkballet)
 
-## Workshop
+## Curriculum ideas
+* [create and administer new spatial data](https://github.com/jgravois/gdi-esri/blob/master/new-data.pdf) (without dealing with servers or a database)
+* upload Open Data you found somewhere else
+* interact with your new RESTful service w/ [Vanilla JS](https://jgravois.github.io/gdi-esri/update-service.html)
+
+## Summit Workshop
 1. create a [free](https://developers.arcgis.com/en/sign-up/) ArcGIS developer account<br>
 2. search github or a socrata portal for something interesting<br>
 (like [this](https://github.com/jgravois/gdi-esri/blob/master/dc-schools.geojson))<br>

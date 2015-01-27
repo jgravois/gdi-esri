@@ -6,6 +6,9 @@
 
 ## [Slides](http://jgravois.github.io/gdi-esri/pres/index.html)
 
+## Resources
+* check out this awesome [gist](https://gist.github.com/sidewalkballet/60edc3408cbbcb6fb949) from @sidewalkballet
+
 ## Workshop
 1. create a [free](https://developers.arcgis.com/en/sign-up/) ArcGIS developer account<br>
 2. search github or a socrata portal for something interesting<br>

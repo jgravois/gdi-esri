@@ -11,7 +11,7 @@
 
 ## Content Ideas
 * [creating a new spatial data service](https://github.com/jgravois/gdi-esri/blob/master/new-data.pdf) without administering a server or database
-* [interacting with your new RESTful service w/ VanillaJS](https://jgravois.github.io/gdi-esri/update-service)
+* [interacting with your new RESTful service w/ VanillaJS](https://jgravois.github.io/gdi-esri/update-service.html)
 * uploading Open Data collected somewhere else
 
 ## Summit Workshop

@@ -10,8 +10,8 @@
 * check out this awesome [gist](https://gist.github.com/sidewalkballet/60edc3408cbbcb6fb949) from [@sidewalkballet](https://github.com/sidewalkballet)
 
 ## Content Ideas
-* [creating a new spatial data service](https://github.com/jgravois/gdi-esri/blob/master/CreateSpatialDataFromScratch.pdf) without administering a server or database
-* [working with RESTful services - Vanilla JS](https://jgravois.github.io/gdi-esri/update-service)
+* [creating a new spatial data service](https://github.com/jgravois/gdi-esri/blob/master/new-data.pdf) without administering a server or database
+* [interacting with your new RESTful service w/ VanillaJS](https://jgravois.github.io/gdi-esri/update-service)
 * uploading Open Data collected somewhere else
 
 ## Summit Workshop

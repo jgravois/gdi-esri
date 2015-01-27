@@ -110,20 +110,12 @@
             if(http.readyState == 4 && http.status == 200) {
 
               var response = JSON.parse(http.responseText);
-<<<<<<< HEAD
-              //now lets dig into the response to see whether the edit POSTed successfully
-=======
               //dig into the response to see whether the edit POSTed successfully
->>>>>>> origin/master
               var update = 'failed';
               if (response.updateResults[0].success){
                 update = 'succeeded';
               }
-<<<<<<< HEAD
-              document.getElementById('result').innerHTML = '<p>attempt to update the hosted feature service <b>' + update + '</b></p>';
-=======
               document.getElementById('result').innerHTML = '<p>the attempt to update the hosted feature service <b>' + update + '</b></p>';
->>>>>>> origin/master
             }
           }
           http.send('updates='+JSON.stringify([feature])+'&f=pjson');

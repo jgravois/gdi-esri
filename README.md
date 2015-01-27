@@ -1,12 +1,20 @@
 #Girl Develop It Leadership Summit 2014 (esri presentation)
 
-## Topics
+## Summit Presentation Topics
 1. what is esri doing to promote Open Data?
 2. what free tools do we have to help GDI develop more geospatial curriculum
 
 ## [Slides](http://jgravois.github.io/gdi-esri/pres/index.html)
 
-## Workshop
+## Resources
+* check out this awesome [gist](https://gist.github.com/sidewalkballet/60edc3408cbbcb6fb949) from [@sidewalkballet](https://github.com/sidewalkballet)
+
+## Content Ideas
+* [creating a new spatial data service](https://github.com/jgravois/gdi-esri/blob/master/CreateSpatialDataFromScratch.pdf) without administering a server or database
+* [working with RESTful services - Vanilla JS](https://jgravois.github.io/gdi-esri/update-service)
+* uploading Open Data collected somewhere else
+
+## Summit Workshop
 1. create a [free](https://developers.arcgis.com/en/sign-up/) ArcGIS developer account<br>
 2. search github or a socrata portal for something interesting<br>
 (like [this](https://github.com/jgravois/gdi-esri/blob/master/dc-schools.geojson))<br>

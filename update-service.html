@@ -1,0 +1,125 @@
+  <!DOCTYPE html>
+  <html lang="en"><head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- Safari iOS - apps only -->
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black">
+      <!-- Chrome for Android - NEW! -->
+      <meta name="mobile-web-app-capable" content="yes">
+      <link rel="apple-touch-icon" href="../images/brand.png">
+      <link rel="shortcut icon" href="../images/favicon.ico">
+
+      <title>Edit Hosted Feature Service</title>
+    </head>
+      <body>
+    <h1>where's the food truck now?</h1>
+    <div id="result"></div>
+    <div id="remote">
+      <input class="typeahead" type="text" placeholder="type in the current location of the food truck.." style="min-width:300px;">
+    </div>
+
+    </body>
+
+    <style>
+    </style>
+
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="//twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.min.js"></script>
+    <script>
+
+      /*
+      this app is a UI to help users enter a valid address or point of interest and use it to update the geometry of an existing feature in a hosted feature service.
+
+      because we want our app to have 'autocomplete' when users start typing, we'll incorporate an open source javascript library called 'typeahead' https://github.com/twitter/typeahead.js/
+
+      the app is not exciting or beautiful yet, but opportunities to extend it abound.
+
+      1. you could use CSS to make it pop
+      2. you could use HTML5 location to try and guess a user's address before they even start typing
+      3. you could use something more clever to notify users whether the update was successful
+      4. you could even add a map to display the result (and you should!)
+      */
+
+      //first we need to create a new suggestion engine
+      var addresses = new Bloodhound({
+        //'text' is the JSON key that corresponds with the matched address suggestion.
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('text'),
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        remote: {
+          /*
+          this url refers to the 'suggest' operation of Esri's World Geocoding Service  https://developers.arcgis.com/rest/geocode/api-reference/geocoding-suggest.htm
+
+          typeahead is going to help us make metered requests to this service, passing what has already been typed in the textbox, and display results in our application
+          */
+          url: '//geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/suggest?text=%QUERY&f=json',
+          filter: function(res) {
+            //the response contains more than just the array of address candidates, so we need to tell typeahead only to look at the suggestions.
+            return res.suggestions;
+          }
+        }
+      });
+
+      /* then we initialize the UI view */
+      addresses.initialize();
+      $('#remote .typeahead').typeahead(null, {
+        name: 'candidates',
+        displayKey: 'text',
+        source: addresses.ttAdapter()
+      });
+      // we could also get an HTML 5 location from the user and try and determine their address from that, but we aren't doing that right now.
+
+      /* next we wire an event handler to listen for when a user clicks on a suggested address */
+      $('.typeahead').on('typeahead:selected', function(evt){
+
+        // one other option would be to pass the matched address to a node app and geocode/update our hosted feature service from there.
+
+        $.ajax({
+          // technically, we should be passing forStorage=true and a token...
+          url: "//geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/find?maxLocations=1&forStorage=false&f=pjson&text="+evt.target.value,
+          context: document.body
+        }).done(function(data) {
+          /* this is a callback function.  it doesn't fire until we get a response from the server to our asynchronous web request to turn our matched address into latitude and longitude coordinates.  'data' is a variable that represents the actual response.
+          */
+          var feature = {
+            "geometry" : JSON.parse(data).locations[0].feature.geometry,
+            "attributes" : {
+              "OBJECTID" : 1
+            }
+          }
+          //feature.geometry.spatialReference = JSON.parse(data).spatialReference;
+          /*
+          the JSON feature spec is defined here: http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Feature_object/02r3000000n8000000/
+          */
+          var url = "//services.arcgis.com/uCXeTVveQzP4IIcx/arcgis/rest/services/LA_Food_Trucks/FeatureServer/0/applyEdits";
+
+          /*
+          this is an alternative to JQuery's $.ajax, but it accomplishes the same exact thing (that is, making an AJAX web request to some external service from within our app)
+
+          what we're doing is sending a POST to our hosted feature service to update the geometry of an existing feature using the coordinates that the geocoding service returned to us a moment ago.
+          */
+          var http = new XMLHttpRequest();
+          http.open("POST", url, true);
+          http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+          document.getElementById('result').innerHTML = '<p>working...</p>';
+
+          http.onreadystatechange = function() {//Call a function when the state changes.
+            if(http.readyState == 4 && http.status == 200) {
+
+              var response = JSON.parse(http.responseText);
+              //dig into the response to see whether the edit POSTed successfully
+              var update = 'failed';
+              if (response.updateResults[0].success){
+                update = 'succeeded';
+              }
+              document.getElementById('result').innerHTML = '<p>the attempt to update the hosted feature service <b>' + update + '</b></p>';
+            }
+          }
+          http.send('updates='+JSON.stringify([feature])+'&f=pjson');
+        });
+      })
+    </script>
+  </html>

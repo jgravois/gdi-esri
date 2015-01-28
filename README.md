@@ -1,5 +1,7 @@
 #Girl Develop It Leadership Summit 2014 (esri presentation)
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jgravois/gdi-esri?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## Summit Presentation Topics
 1. what is esri doing to promote Open Data?
 2. what free tools do we have to help GDI develop more geospatial curriculum
